@@ -34,7 +34,7 @@
       {
         public static void main (String[] args)
         {
-          // construction for a collection of ints using Integer wrapper
+          // construction of a collection of ints using Integer wrapper
           // class
           IBCollection temps = new IBCollection <Integer> ();
 
