@@ -40,6 +40,36 @@
       : 19
       : 22
       : -5
+   3. Example use of a stack.
+      #+begin_src java :exports both :classname StackExample :results output 
+        import ibadts.IBStack;
+
+        class StackExample
+        {
+          public static void main (String[] args)
+          {
+            IBStack bits = new IBStack <String> ();
+            int decimal = 1216;
+    
+            while (decimal > 0)
+            {
+              String digit;
+              if (decimal % 2 == 0)
+                digit = "zero";
+              else
+                digit = "one";
+              bits.push (digit);
+              decimal = decimal / 2;
+            }
+            while (!bits.isEmpty ())
+              System.out.print (bits.pop () + " ");
+          }
+        }
+      #+end_src
+
+      #+RESULTS:
+      : one zero zero one one zero zero zero zero zero zero 
+      
 
 ** License
    Copyright (C) 2020 Jarmo Hurri
