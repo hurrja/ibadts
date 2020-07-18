@@ -4,7 +4,6 @@
    types used in IB Computer Science: collections, stacks and queues.
 
 ** Usage
-
 *** Obtaining source code
     Clone this repository into your project directory by running
     #+begin_src sh
@@ -15,6 +14,7 @@
     #+begin_src sh
       git submodule add https://github.com/jarmohurri/ibadts.git
     #+end_src
+    or just download a zip-file from =Code=-button above.
 *** Available methods
     In addition to constructors, the classes contain the methods
     specified by the IB document on pseudocode in exams. To help in
