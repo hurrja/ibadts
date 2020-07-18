@@ -34,7 +34,8 @@
       {
         public static void main (String[] args)
         {
-          // construction using Integer (with autoboxing)
+          // construction for a collection of ints using Integer wrapper
+          // class
           IBCollection temps = new IBCollection <Integer> ();
 
           temps.add (new Integer[] {19, 22}); // initialize from array
