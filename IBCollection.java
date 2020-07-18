@@ -1,16 +1,19 @@
 package ibadts;
 
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.Iterator;
-
 public class IBCollection <T>
 {
   public IBCollection ()
   {
-    collection = new ArrayList <T> ();
+    collection = new java.util.ArrayList <T> ();
   }
       
+  // initialize the collection from an array of elements
+  public void initialize (T[] values)
+  {
+    for (T value : values)
+      addItem (value);
+  }
+  
   public void addItem (T item)
   {
     collection.add (item);
@@ -44,6 +47,6 @@ public class IBCollection <T>
       resetNext ();
   }
   
-  private Collection collection;
-  private Iterator <T> iterator;
+  private java.util.Collection collection;
+  private java.util.Iterator <T> iterator;
 }
