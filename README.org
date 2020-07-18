@@ -26,7 +26,7 @@
     are in the array, using the \ldquo{}default\rdquo add operation
     of the data type (e.g., =push()= in case of a stack).
     
-    Example use of a collection.
+*** Example use of a collection.
     #+begin_src java :exports both :classname CollectionExample :results output 
       import ibadts.IBCollection;
 
@@ -81,7 +81,7 @@
 
     #+RESULTS:
     : one zero zero one one zero zero zero zero zero zero
-*** Example use of queue.
+*** Example use of a queue.
     #+begin_src java :exports both :classname QueueExample :results output 
       import ibadts.IBQueue;
 
