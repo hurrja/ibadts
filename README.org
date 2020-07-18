@@ -14,7 +14,32 @@
       #+begin_src sh
       git submodule add https://github.com/jarmohurri/ibadts.git
       #+end_src
-   2. Example collection
+   2. Example use of a collection.
+      #+begin_src java :exports none :classname CollectionExample :results output 
+        import ibadts.IBCollection;
+
+        class CollectionExample
+        {
+          public static void main (String[] args)
+          {
+            // construction using Integer (with autoboxing)
+            IBCollection temps = new IBCollection <Integer> ();
+
+            temps.add (new Integer[] {19, 22}); // initialize from array
+            temps.addItem (-5); // add one more
+
+            temps.resetNext (); // go to start
+            // traverse
+            while (temps.hasNext ())
+              System.out.println (temps.getNext ()); 
+          }
+        }
+      #+end_src
+
+      #+RESULTS:
+      : 19
+      : 22
+      : -5
 
 ** License
    Copyright (C) 2020 Jarmo Hurri
