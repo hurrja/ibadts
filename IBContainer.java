@@ -23,11 +23,11 @@ public abstract class IBContainer <T>
   {
   }
 
-  // initialize the collection from an array of elements
-  public void initialize (T[] items)
+  // add an array of elements
+  public void add (T[] items)
   {
     for (T item : items)
-      adder (item);
+      add (item);
   }
   
   public boolean isEmpty ()
@@ -35,7 +35,7 @@ public abstract class IBContainer <T>
     return getContainer ().isEmpty ();
   }
 
-  protected abstract void adder (T item);
+  protected abstract void add (T item);
   
   protected abstract Collection getContainer ();
 }

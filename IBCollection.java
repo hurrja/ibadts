@@ -48,7 +48,7 @@ public class IBCollection <T> extends IBContainer <T>
   
   // ---------------------------------------------------------------
   // implementation details
-  protected void adder (T item)
+  protected void add (T item)
   {
     addItem (item);
   }

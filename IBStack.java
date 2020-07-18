@@ -37,7 +37,7 @@ public class IBStack <T> extends IBContainer <T>
   // ---------------------------------------------------------------
   // implementation details
 
-  protected void adder (T item)
+  protected void add (T item)
   {
     push (item);
   }
