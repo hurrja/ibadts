@@ -1,23 +1,22 @@
-# Java implementation of IB CS abstract data types
-## IB abstract data types in Java programs
+* Java implementation of IB CS abstract data types
+** IB abstract data types in Java programs
    This repository contains Java classes that implement abstract data
    types used in IB Computer Science. Currently only collections are
    implemented; other data types (stacks, queues) will follow.
 
-## Usage
+** Usage
    1. Clone this repository into your project directory by running
-      ```
+      #+begin_src sh
       git clone https://github.com/jarmohurri/ibadts.git
-      ```
-      or, if you are using `git` yourself in your project, add this library as a submodule
-      ```
+      #+end_src
+      or, if you are using =git= yourself in your project, add this
+      library as a submodule
+      #+begin_src sh
       git submodule add https://github.com/jarmohurri/ibadts.git
-      ```
-   2. Example use.
-      ```
-      
-      ```
-## License
+      #+end_src
+   2. Example collection
+
+** License
    Copyright (C) 2020 Jarmo Hurri
 
    This program is free software: you can redistribute it and/or modify
