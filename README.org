@@ -1,8 +1,7 @@
 * Java implementation of IB CS abstract data types
 ** IB abstract data types in Java programs
    This repository contains Java classes that implement abstract data
-   types used in IB Computer Science. Currently only collections are
-   implemented; other data types (stacks, queues) will follow.
+   types used in IB Computer Science: collections, stacks and queues.
 
 ** Usage
    1. Clone this repository into your project directory by running
@@ -14,7 +13,16 @@
       #+begin_src sh
       git submodule add https://github.com/jarmohurri/ibadts.git
       #+end_src
-   2. Example use of a collection.
+   2. The classes contain the methods specified by the IB document on
+      pseudocode in exams. In addition, all classes contain a helper
+      method
+      #+begin_src java :exports code
+        public void add (T[] items)
+      #+end_src
+      which adds all the items in the given array in the order they
+      are in the array, using the \ldquo{}default\rdquo add operation
+      of the data type (e.g., =push()= in case of a stack).
+   3. Example use of a collection.
       #+begin_src java :exports both :classname CollectionExample :results output 
         import ibadts.IBCollection;
 
@@ -40,7 +48,7 @@
       : 19
       : 22
       : -5
-   3. Example use of a stack.
+   4. Example use of a stack.
       #+begin_src java :exports both :classname StackExample :results output 
         import ibadts.IBStack;
 
@@ -69,7 +77,7 @@
 
       #+RESULTS:
       : one zero zero one one zero zero zero zero zero zero
-   4. Example use of queue.
+   5. Example use of queue.
       #+begin_src java :exports both :classname QueueExample :results output 
         import ibadts.IBQueue;
 
