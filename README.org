@@ -4,105 +4,108 @@
    types used in IB Computer Science: collections, stacks and queues.
 
 ** Usage
-   1. Clone this repository into your project directory by running
-      #+begin_src sh
+
+*** Obtaining source code
+    Clone this repository into your project directory by running
+    #+begin_src sh
       git clone https://github.com/jarmohurri/ibadts.git
-      #+end_src
-      or, if you are using =git= yourself in your project, add this
-      library as a submodule
-      #+begin_src sh
+    #+end_src
+    or, if you are using =git= yourself in your project, add this
+    library as a submodule
+    #+begin_src sh
       git submodule add https://github.com/jarmohurri/ibadts.git
-      #+end_src
-   2. The classes contain the methods specified by the IB document on
-      pseudocode in exams. In addition, all classes contain a helper
-      method
-      #+begin_src java :exports code
-        public void add (T[] items)
-      #+end_src
-      which adds all the items in the given array in the order they
-      are in the array, using the \ldquo{}default\rdquo add operation
-      of the data type (e.g., =push()= in case of a stack).
-   3. Example use of a collection.
-      #+begin_src java :exports both :classname CollectionExample :results output 
-        import ibadts.IBCollection;
-
-        class CollectionExample
-        {
-          public static void main (String[] args)
-          {
-            // construction using Integer (with autoboxing)
-            IBCollection temps = new IBCollection <Integer> ();
-
-            temps.add (new Integer[] {19, 22}); // initialize from array
-            temps.addItem (-5); // add one more
-
-            temps.resetNext (); // go to start
-            // traverse
-            while (temps.hasNext ())
-              System.out.println (temps.getNext ()); 
-          }
-        }
-      #+end_src
-
-      #+RESULTS:
-      : 19
-      : 22
-      : -5
-   4. Example use of a stack.
-      #+begin_src java :exports both :classname StackExample :results output 
-        import ibadts.IBStack;
-
-        class StackExample
-        {
-          public static void main (String[] args)
-          {
-            IBStack bits = new IBStack <String> ();
-            int decimal = 1216;
+    #+end_src
+*** Available methods
+    In addition to constructors, the classes contain the methods
+    specified by the IB document on pseudocode in exams. In addition,
+    all classes contain a helper method
+    #+begin_src java :exports code
+      public void add (T[] items)
+    #+end_src
+    which adds all the items in the given array in the order they
+    are in the array, using the \ldquo{}default\rdquo add operation
+    of the data type (e.g., =push()= in case of a stack).
     
-            while (decimal > 0)
-            {
-              String digit;
-              if (decimal % 2 == 0)
-                digit = "zero";
-              else
-                digit = "one";
-              bits.push (digit);
-              decimal = decimal / 2;
-            }
-            while (!bits.isEmpty ())
-              System.out.print (bits.pop () + " ");
-          }
-        }
-      #+end_src
+    Example use of a collection.
+    #+begin_src java :exports both :classname CollectionExample :results output 
+      import ibadts.IBCollection;
 
-      #+RESULTS:
-      : one zero zero one one zero zero zero zero zero zero
-   5. Example use of queue.
-      #+begin_src java :exports both :classname QueueExample :results output 
-        import ibadts.IBQueue;
-
-        class QueueExample
+      class CollectionExample
+      {
+        public static void main (String[] args)
         {
-          public static void main (String[] args)
-          {
-            IBQueue line = new IBQueue <String> ();
-            for (int i = 0; i < 5; i++)
-              line.enqueue ("slow customer " + i);
-            line.enqueue ("hungry me");
-            while (!line.isEmpty ())
-              System.out.println ("Next! -> food for " + line.dequeue ());
-          }
-        }
-      #+end_src
+          // construction using Integer (with autoboxing)
+          IBCollection temps = new IBCollection <Integer> ();
 
-      #+RESULTS:
-      : Next! -> food for slow customer 0
-      : Next! -> food for slow customer 1
-      : Next! -> food for slow customer 2
-      : Next! -> food for slow customer 3
-      : Next! -> food for slow customer 4
-      : Next! -> food for hungry me
-      
+          temps.add (new Integer[] {19, 22}); // initialize from array
+          temps.addItem (-5); // add one more
+
+          temps.resetNext (); // go to start
+          // traverse
+          while (temps.hasNext ())
+            System.out.println (temps.getNext ()); 
+        }
+      }
+    #+end_src
+
+    #+RESULTS:
+    : 19
+    : 22
+    : -5
+*** Example use of a stack.
+    #+begin_src java :exports both :classname StackExample :results output 
+      import ibadts.IBStack;
+
+      class StackExample
+      {
+        public static void main (String[] args)
+        {
+          IBStack bits = new IBStack <String> ();
+          int decimal = 1216;
+    
+          while (decimal > 0)
+          {
+            String digit;
+            if (decimal % 2 == 0)
+              digit = "zero";
+            else
+              digit = "one";
+            bits.push (digit);
+            decimal = decimal / 2;
+          }
+          while (!bits.isEmpty ())
+            System.out.print (bits.pop () + " ");
+        }
+      }
+    #+end_src
+
+    #+RESULTS:
+    : one zero zero one one zero zero zero zero zero zero
+*** Example use of queue.
+    #+begin_src java :exports both :classname QueueExample :results output 
+      import ibadts.IBQueue;
+
+      class QueueExample
+      {
+        public static void main (String[] args)
+        {
+          IBQueue line = new IBQueue <String> ();
+          for (int i = 0; i < 5; i++)
+            line.enqueue ("slow customer " + i);
+          line.enqueue ("hungry me");
+          while (!line.isEmpty ())
+            System.out.println ("Next! -> food for " + line.dequeue ());
+        }
+      }
+       #+end_src
+
+       #+RESULTS:
+       : Next! -> food for slow customer 0
+       : Next! -> food for slow customer 1
+       : Next! -> food for slow customer 2
+       : Next! -> food for slow customer 3
+       : Next! -> food for slow customer 4
+       : Next! -> food for hungry me
 
 ** License
    Copyright (C) 2020 Jarmo Hurri
