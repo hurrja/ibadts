@@ -15,7 +15,7 @@
       git submodule add https://github.com/jarmohurri/ibadts.git
       #+end_src
    2. Example use of a collection.
-      #+begin_src java :exports none :classname CollectionExample :results output 
+      #+begin_src java :exports both :classname CollectionExample :results output 
         import ibadts.IBCollection;
 
         class CollectionExample
