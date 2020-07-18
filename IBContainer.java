@@ -15,47 +15,25 @@
 
 package ibadts;
 
-import ibadts.IBContainer;
+import java.util.Collection;
 
-public class IBCollection <T> extends IBContainer <T>
+public abstract class IBContainer <T>
 {
-  public IBCollection ()
+  protected IBContainer () { }
+
+  // initialize the collection from an array of elements
+  public void initialize (T[] items)
   {
-    container = new java.util.ArrayList <T> ();
-  }
-      
-  public void addItem (T item)
-  {
-    container.add (item);
-  }
-  
-  public T getNext ()
-  {
-    ensureIteratorInit ();
-    return iterator.next ();
+    for (T item : items)
+      adder (item);
   }
   
-  public void resetNext ()
+  public boolean isEmpty ()
   {
-    iterator = container.iterator ();
+    return container.isEmpty ();
   }
+
+  protected abstract void adder (T item);
   
-  public boolean hasNext ()
-  {
-    ensureIteratorInit ();
-    return iterator.hasNext ();
-  }
-  
-  protected void adder (T item)
-  {
-    addItem (item);
-  }
-  
-  private void ensureIteratorInit ()
-  {
-    if (iterator == null)
-      resetNext ();
-  }
-  
-  protected java.util.Iterator <T> iterator;
+  protected Collection container;
 }
