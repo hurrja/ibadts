@@ -78,7 +78,7 @@
           public static void main (String[] args)
           {
             IBQueue line = new IBQueue <String> ();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
               line.enqueue ("slow customer " + i);
             line.enqueue ("hungry me");
             while (!line.isEmpty ())
@@ -88,19 +88,12 @@
       #+end_src
 
       #+RESULTS:
-      #+begin_example
-      Next! -> food for slow customer 0
-      Next! -> food for slow customer 1
-      Next! -> food for slow customer 2
-      Next! -> food for slow customer 3
-      Next! -> food for slow customer 4
-      Next! -> food for slow customer 5
-      Next! -> food for slow customer 6
-      Next! -> food for slow customer 7
-      Next! -> food for slow customer 8
-      Next! -> food for slow customer 9
-      Next! -> food for hungry me
-      #+end_example
+      : Next! -> food for slow customer 0
+      : Next! -> food for slow customer 1
+      : Next! -> food for slow customer 2
+      : Next! -> food for slow customer 3
+      : Next! -> food for slow customer 4
+      : Next! -> food for hungry me
       
 
 ** License
