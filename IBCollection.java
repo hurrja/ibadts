@@ -21,12 +21,12 @@ public class IBCollection <T> extends IBContainer <T>
 {
   public IBCollection ()
   {
-    container = new java.util.ArrayList <T> ();
+    collection = new java.util.ArrayList <T> ();
   }
       
   public void addItem (T item)
   {
-    container.add (item);
+    collection.add (item);
   }
   
   public T getNext ()
@@ -37,7 +37,7 @@ public class IBCollection <T> extends IBContainer <T>
   
   public void resetNext ()
   {
-    iterator = container.iterator ();
+    iterator = collection.iterator ();
   }
   
   public boolean hasNext ()
@@ -46,11 +46,18 @@ public class IBCollection <T> extends IBContainer <T>
     return iterator.hasNext ();
   }
   
+  // ---------------------------------------------------------------
+  // implementation details
   protected void adder (T item)
   {
     addItem (item);
   }
-  
+
+  protected java.util.Collection getContainer ()
+  {
+    return collection;
+  }
+
   private void ensureIteratorInit ()
   {
     if (iterator == null)
@@ -58,4 +65,5 @@ public class IBCollection <T> extends IBContainer <T>
   }
   
   protected java.util.Iterator <T> iterator;
+  protected java.util.Collection <T> collection;
 }

@@ -19,7 +19,9 @@ import java.util.Collection;
 
 public abstract class IBContainer <T>
 {
-  protected IBContainer () { }
+  protected IBContainer ()
+  {
+  }
 
   // initialize the collection from an array of elements
   public void initialize (T[] items)
@@ -30,10 +32,10 @@ public abstract class IBContainer <T>
   
   public boolean isEmpty ()
   {
-    return container.isEmpty ();
+    return getContainer ().isEmpty ();
   }
 
   protected abstract void adder (T item);
   
-  protected Collection container;
+  protected abstract Collection getContainer ();
 }
