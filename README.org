@@ -81,7 +81,7 @@
     #+end_src
 
     #+RESULTS:
-    : one zero zero one one zero zero zero zero zero zero
+    : one zero zero one one zero zero zero zero zero zero 
 *** Example use of a queue
     #+begin_src java :exports both :classname QueueExample :results output 
       import ibadts.IBQueue;

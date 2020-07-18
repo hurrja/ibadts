@@ -47,5 +47,5 @@ public class IBQueue <T> extends IBContainer <T>
     return queue;
   }
 
-  java.util.Queue <T> queue;
+  private java.util.Queue <T> queue;
 }

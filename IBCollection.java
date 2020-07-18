@@ -64,6 +64,6 @@ public class IBCollection <T> extends IBContainer <T>
       resetNext ();
   }
   
-  protected java.util.Iterator <T> iterator;
-  protected java.util.Collection <T> collection;
+  private java.util.Iterator <T> iterator;
+  private java.util.Collection <T> collection;
 }

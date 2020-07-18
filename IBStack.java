@@ -47,5 +47,5 @@ public class IBStack <T> extends IBContainer <T>
     return stack;
   }
 
-  java.util.Stack <T> stack;
+  private java.util.Stack <T> stack;
 }
