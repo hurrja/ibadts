@@ -17,11 +17,11 @@ package ibadts;
 
 import ibadts.IBContainer;
 
-public class IBCollection <T> extends IBContainer <T>
+public class IBCollection<T> extends IBContainer<T>
 {
   public IBCollection ()
   {
-    collection = new java.util.ArrayList <T> ();
+    collection = new java.util.ArrayList<T> ();
   }
       
   public void addItem (T item)
@@ -64,6 +64,6 @@ public class IBCollection <T> extends IBContainer <T>
       resetNext ();
   }
   
-  private java.util.Iterator <T> iterator;
-  private java.util.Collection <T> collection;
+  private java.util.Iterator<T> iterator;
+  private java.util.Collection<T> collection;
 }

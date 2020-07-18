@@ -17,11 +17,11 @@ package ibadts;
 
 import ibadts.IBContainer;
 
-public class IBStack <T> extends IBContainer <T>
+public class IBStack<T> extends IBContainer<T>
 {
   public IBStack ()
   {
-    stack = new java.util.Stack <T> ();
+    stack = new java.util.Stack<T> ();
   }
 
   public void push (T item)
@@ -47,5 +47,5 @@ public class IBStack <T> extends IBContainer <T>
     return stack;
   }
 
-  private java.util.Stack <T> stack;
+  private java.util.Stack<T> stack;
 }

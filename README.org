@@ -36,7 +36,7 @@
         {
           // construction of a collection of ints using Integer wrapper
           // class
-          IBCollection <Integer> temps = new IBCollection <> ();
+          IBCollection<Integer> temps = new IBCollection<> ();
 
           temps.add (new Integer[] {19, 22}); // initialize from array
           temps.addItem (-5); // add one more
@@ -61,7 +61,7 @@
       {
         public static void main (String[] args)
         {
-          IBStack <String> bits = new IBStack <> ();
+          IBStack<String> bits = new IBStack<> ();
           int decimal = 1216;
     
           while (decimal > 0)
@@ -90,7 +90,7 @@
       {
         public static void main (String[] args)
         {
-          IBQueue <String> line = new IBQueue <> ();
+          IBQueue<String> line = new IBQueue<> ();
           for (int i = 0; i < 5; i++)
             line.enqueue ("slow customer " + i);
           line.enqueue ("hungry me");

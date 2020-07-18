@@ -17,11 +17,11 @@ package ibadts;
 
 import ibadts.IBContainer;
 
-public class IBQueue <T> extends IBContainer <T>
+public class IBQueue<T> extends IBContainer<T>
 {
   public IBQueue ()
   {
-    queue = new java.util.LinkedList <T> ();
+    queue = new java.util.LinkedList<T> ();
   }
 
   public void enqueue (T item)
@@ -47,5 +47,5 @@ public class IBQueue <T> extends IBContainer <T>
     return queue;
   }
 
-  private java.util.Queue <T> queue;
+  private java.util.Queue<T> queue;
 }

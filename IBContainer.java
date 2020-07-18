@@ -17,7 +17,7 @@ package ibadts;
 
 import java.util.Collection;
 
-public abstract class IBContainer <T>
+public abstract class IBContainer<T>
 {
   protected IBContainer ()
   {
