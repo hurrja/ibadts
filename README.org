@@ -34,17 +34,17 @@
       {
         public static void main (String[] args)
         {
-          // construction of a collection of ints using Integer wrapper
-          // class
-          IBCollection<Integer> temps = new IBCollection<> ();
+          // construction of a collection of objects
+          IBCollection<Object> objects = new IBCollection<> ();
 
-          temps.add (new Integer[] {19, 22}); // initialize from array
-          temps.addItem (-5); // add one more
+          // initialize from integer array using wrapper class Integer
+          objects.add (new Integer[] {19, 22}); 
+          objects.addItem ("end"); // add a string
 
-          temps.resetNext (); // go to start
+          objects.resetNext (); // go to start
           // traverse
-          while (temps.hasNext ())
-            System.out.println (temps.getNext ()); 
+          while (objects.hasNext ())
+            System.out.println (objects.getNext ()); 
         }
       }
     #+end_src
@@ -52,7 +52,7 @@
     #+RESULTS:
     : 19
     : 22
-    : -5
+    : end
 *** Example use of a stack
     #+begin_src java :exports both :classname StackExample :results output 
       import ibadts.IBStack;
