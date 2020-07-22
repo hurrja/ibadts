@@ -41,8 +41,7 @@
           objects.add (new Integer[] {19, 22}); 
           objects.addItem ("end"); // add a string
 
-          objects.resetNext (); // go to start
-          // traverse
+          // traverse (note: resetNext() not needed before 1st traversal)
           while (objects.hasNext ())
             System.out.println (objects.getNext ()); 
         }
