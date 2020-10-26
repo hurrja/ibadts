@@ -2,19 +2,36 @@
 ** IB collections, stacks and queues in Java
    This repository contains Java classes that implement abstract data
    types used in IB Computer Science: collections, stacks and queues.
+** Installation
+*** If you are using Intellij IDEA
+    In Intellij IDEA, this package needs to be installed only once,
+    and then you can use it in all your projects.
 
-** Usage
-*** Obtaining source code
-    Clone this repository into your project directory by running
-    #+begin_src sh
-      git clone https://github.com/jarmohurri/ibadts.git
-    #+end_src
-    or, if you are using =git= yourself in your project, add this
-    library as a submodule
+    Installation steps are as follows:
+    1. Create a new project from version control.
+    2. As project source, give https://github.com/jarmohurri/ibadts.git.
+    3. Install git if asked to do that.
+    4. After git has cloned the project, build the package jar file:
+       1. Right click on file =build.xml=.
+       2. Select =Add as Ant build file=.
+       3. Select =Build -> ibadts -> <default target>=.
+    5. After the build has finished, you can close the =ibadts=
+       project. The package is ready to be used.
+
+    After this, to use this package in a project:
+    1. Select =File -> Project structure...=.
+    2. Select =Modules=.
+    3. Select =Dependencies=.
+    4. Select =+ -> JARs or directories...=.
+    5. This opens a file selector. Locate =ibadts.jar= and select it.
+    6. Select =OK=.
+*** If you are using git as your own version control system
+    Just add this library as a submodule of your project:
     #+begin_src sh
       git submodule add https://github.com/jarmohurri/ibadts.git
     #+end_src
-    or just download a zip-file from =Code=-button above.
+
+** Usage in Java
 *** Available methods
     In addition to constructors, the classes contain the methods
     specified by the IB document on pseudocode in exams. To help in
