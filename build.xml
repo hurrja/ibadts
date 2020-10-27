@@ -1,7 +1,7 @@
 <project name="ibadts" default="jar" basedir=".">
   <target name="compile">
     <mkdir dir="ibadts"/>
-    <javac srcdir="." destdir="ibadts"/>
+    <javac includeantruntime="false" srcdir="." destdir="ibadts"/>
   </target>
   <target name="jar" depends="compile">
     <jar destfile="ibadts.jar" basedir="ibadts">
