@@ -15,11 +15,11 @@
 
 package ibadts;
 
-import ibadts.IBContainer;
+import ibadts.Container;
 
-public class IBCollection<T> extends IBContainer<T>
+public class Collection<T> extends Container<T>
 {
-  public IBCollection ()
+  public Collection ()
   {
     collection = new java.util.ArrayList<T> ();
   }

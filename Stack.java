@@ -15,27 +15,37 @@
 
 package ibadts;
 
-import java.util.Collection;
+import ibadts.Container;
 
-public abstract class IBContainer<T>
+public class Stack<T> extends Container<T>
 {
-  protected IBContainer ()
+  public Stack ()
   {
+    stack = new java.util.Stack<T> ();
   }
 
-  // add an array of elements
-  public void add (T[] items)
+  public void push (T item)
   {
-    for (T item : items)
-      add (item);
-  }
-  
-  public boolean isEmpty ()
-  {
-    return getContainer ().isEmpty ();
+    stack.push (item);
   }
 
-  protected abstract void add (T item);
-  
-  protected abstract Collection getContainer ();
+  public T pop ()
+  {
+    return stack.pop ();
+  }
+
+  // ---------------------------------------------------------------
+  // implementation details
+
+  protected void add (T item)
+  {
+    push (item);
+  }
+
+  protected java.util.Collection getContainer ()
+  {
+    return stack;
+  }
+
+  private java.util.Stack<T> stack;
 }

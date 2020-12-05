@@ -15,11 +15,11 @@
 
 package ibadts;
 
-import ibadts.IBContainer;
+import ibadts.Container;
 
-public class IBQueue<T> extends IBContainer<T>
+public class Queue<T> extends Container<T>
 {
-  public IBQueue ()
+  public Queue ()
   {
     queue = new java.util.LinkedList<T> ();
   }
