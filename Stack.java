@@ -21,7 +21,7 @@ public class Stack<T> extends Container<T>
 {
   public Stack ()
   {
-    stack = new java.util.Stack<T> ();
+    stack = new java.util.ArrayDeque<T> ();
   }
 
   public void push (T item)
@@ -47,5 +47,5 @@ public class Stack<T> extends Container<T>
     return stack;
   }
 
-  private java.util.Stack<T> stack;
+  private java.util.ArrayDeque<T> stack;
 }
