@@ -34,6 +34,17 @@
       git submodule add https://github.com/jarmohurri/ibadts.git
     #+end_src
 
+** Order of traversal of =Collection=
+   IB documentation of =Collection= does not describe any guarantee on
+   order of the elements during traversal. No ordering would make this
+   ADT similar to ADT =Bag= in computer science literature.
+
+   In practice, however, there have been exam questions where the
+   order of traversal is the one implied by the order of calls to
+   =addItem()=. That is, items are traversed in the order they have
+   been added. This implementation guarantees this ordering during
+   traversal.
+
 ** Usage in Java
 *** Available methods
     In addition to constructors, the classes contain the methods

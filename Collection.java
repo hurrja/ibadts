@@ -21,12 +21,12 @@ public class Collection<T> extends Container<T>
 {
   public Collection ()
   {
-    collection = new java.util.ArrayList<T> ();
+    list = new java.util.ArrayList<T> ();
   }
       
   public void addItem (T item)
   {
-    collection.add (item);
+    list.add (item);
   }
   
   public T getNext ()
@@ -37,7 +37,7 @@ public class Collection<T> extends Container<T>
   
   public void resetNext ()
   {
-    iterator = collection.iterator ();
+    iterator = list.iterator ();
   }
   
   public boolean hasNext ()
@@ -55,7 +55,7 @@ public class Collection<T> extends Container<T>
 
   protected java.util.Collection getContainer ()
   {
-    return collection;
+    return list;
   }
 
   private void ensureIteratorInit ()
@@ -65,5 +65,5 @@ public class Collection<T> extends Container<T>
   }
   
   private java.util.Iterator<T> iterator;
-  private java.util.Collection<T> collection;
+  private java.util.List<T> list;
 }
