@@ -43,7 +43,7 @@ public class StaticQueue<T> extends StaticContainer<T>
     enqueue (item);
   }
 
-  protected java.util.Collection getContainer ()
+  protected java.util.Collection<T> getContainer ()
   {
     return queue.getContainer ();
   }

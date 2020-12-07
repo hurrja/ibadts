@@ -35,5 +35,5 @@ public abstract class Container<T>
 
   protected abstract void add (T item);
   
-  protected abstract java.util.Collection getContainer ();
+  protected abstract java.util.Collection<T> getContainer ();
 }

@@ -44,7 +44,7 @@ public class StaticStack<T> extends StaticContainer<T>
     push (item);
   }
 
-  protected java.util.Collection getContainer ()
+  protected java.util.Collection<T> getContainer ()
   {
     return stack.getContainer ();
   }

@@ -34,15 +34,12 @@ public class Queue<T> extends Container<T>
     return queue.remove ();
   }
 
-  // ---------------------------------------------------------------
-  // implementation details
-
   protected void add (T item)
   {
     enqueue (item);
   }
 
-  protected java.util.Collection getContainer ()
+  protected java.util.Collection<T> getContainer ()
   {
     return queue;
   }

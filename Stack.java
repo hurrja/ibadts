@@ -34,15 +34,12 @@ public class Stack<T> extends Container<T>
     return stack.pop ();
   }
 
-  // ---------------------------------------------------------------
-  // implementation details
-
   protected void add (T item)
   {
     push (item);
   }
 
-  protected java.util.Collection getContainer ()
+  protected java.util.Collection<T> getContainer ()
   {
     return stack;
   }

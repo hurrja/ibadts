@@ -46,14 +46,12 @@ public class Collection<T> extends Container<T>
     return iterator.hasNext ();
   }
   
-  // ---------------------------------------------------------------
-  // implementation details
   protected void add (T item)
   {
     addItem (item);
   }
 
-  protected java.util.Collection getContainer ()
+  protected java.util.Collection<T> getContainer ()
   {
     return list;
   }
