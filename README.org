@@ -1,7 +1,9 @@
 * Java implementation of IB CS abstract data types
 ** IB collections, stacks and queues in Java
    This repository contains Java classes that implement abstract data
-   types used in IB Computer Science: collections, stacks and queues.
+   types used in IB Computer Science: collections, stacks and
+   queues. Static (fixed-size) versions of stacks and queues are also
+   included.
 ** Installation
 *** If you are using Intellij IDEA
     In Intellij IDEA, this package needs to be installed only once,
@@ -112,18 +114,19 @@
 
     #+RESULTS:
     : one zero zero one one zero zero zero zero zero zero 
-*** Example use of a queue
+*** Example use of a static queue
     #+begin_src java :exports both :classname QueueExample :results output 
-      import ibadts.Queue;
+      import ibadts.StaticQueue;
 
       class QueueExample
       {
         public static void main (String[] args)
         {
-          Queue<String> line = new Queue<> ();
-          for (int i = 0; i < 5; i++)
-            line.enqueue ("slow customer " + i);
-          line.enqueue ("hungry me");
+          StaticQueue<String> line = new StaticQueue<> (5);
+
+          for (int i = 1; !line.isFull (); i++)
+            line.enqueue ("customer " + i);
+
           while (!line.isEmpty ())
             System.out.println ("Next! -> food for " + line.dequeue ());
         }
@@ -131,12 +134,11 @@
        #+end_src
 
        #+RESULTS:
-       : Next! -> food for slow customer 0
-       : Next! -> food for slow customer 1
-       : Next! -> food for slow customer 2
-       : Next! -> food for slow customer 3
-       : Next! -> food for slow customer 4
-       : Next! -> food for hungry me
+       : Next! -> food for customer 1
+       : Next! -> food for customer 2
+       : Next! -> food for customer 3
+       : Next! -> food for customer 4
+       : Next! -> food for customer 5
 
 ** License
    Copyright (C) 2020 Jarmo Hurri
