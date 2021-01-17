@@ -63,7 +63,7 @@
 
     For convenient printing, a method
     #+begin_src java :exports code
-      String toString ()
+      public String toString ()
     #+end_src
     is also provided. This method prints the array returned by the
     =toArray()= method of the underlying Java class.
