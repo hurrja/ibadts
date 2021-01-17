@@ -50,15 +50,23 @@
 ** Usage in Java
 *** Available methods
     In addition to constructors, the classes contain the methods
-    specified by the IB document on pseudocode in exams. To help in
-    quick initialization, all classes also contain a helper method
+    specified by the IB document on pseudocode in exams. 
+
+    To help in quick initialization, all classes also contain a helper
+    method
     #+begin_src java :exports code
       public void add (T[] items)
     #+end_src
     which adds all the =items= of type =T= into the container, in the
     order they are in the array, using the \ldquo{}default\rdquo add
     operation of the data type (e.g., =push()= in case of a stack).
-    
+
+    For convenient printing, a method
+    #+begin_src java :exports code
+      String toString ()
+    #+end_src
+    is also provided. This method prints the array returned by the
+    =toArray()= method of the underlying Java class.
 *** Example use of a collection
     #+begin_src java :exports both :classname CollectionExample :results output 
       import ibadts.Collection;
@@ -72,6 +80,8 @@
 
           // initialize from integer array using wrapper class Integer
           objects.add (new Integer[] {19, 22}); 
+
+          System.out.println ("contents: " + objects); // print using convenience method
           objects.addItem ("end"); // add a string
 
           // traverse (note: resetNext() not needed before 1st traversal)
@@ -82,6 +92,7 @@
     #+end_src
 
     #+RESULTS:
+    : contents: [19, 22]
     : 19
     : 22
     : end

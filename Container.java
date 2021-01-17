@@ -33,6 +33,11 @@ public abstract class Container<T>
     return getContainer ().isEmpty ();
   }
 
+  public String toString ()
+  {
+    return java.util.Arrays.toString (getContainer ().toArray ());
+  }
+
   protected abstract void add (T item);
   
   protected abstract java.util.Collection<T> getContainer ();
