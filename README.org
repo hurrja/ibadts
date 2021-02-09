@@ -150,6 +150,32 @@
        : Next! -> food for customer 3
        : Next! -> food for customer 4
        : Next! -> food for customer 5
+*** Example use of a binary tree
+    #+begin_src java :exports both :classname TreeExample :results output
+      import ibadts.BinaryTree;
+      import ibadts.Queue;
+
+      class TreeExample
+      {
+        public static void main (String[] args)
+        {
+          BinaryTree<String> nameTree = new BinaryTree<> ();
+          nameTree.add ("Tarzan");
+          nameTree.add ("Banana");
+          nameTree.add ("Jane");
+          nameTree.add ("Cheetah");
+          Queue<String> queue = nameTree.preorder ();
+          while (!queue.isEmpty ())
+            System.out.println (queue.dequeue ());
+        }
+      }
+    #+end_src
+
+    #+RESULTS:
+    : Banana
+    : Cheetah
+    : Jane
+    : Tarzan
 
 ** License
    Copyright (C) 2020 Jarmo Hurri
