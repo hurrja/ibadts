@@ -164,18 +164,25 @@
           nameTree.add ("Banana");
           nameTree.add ("Jane");
           nameTree.add ("Cheetah");
-          Queue<String> queue = nameTree.preorder ();
-          while (!queue.isEmpty ())
-            System.out.println (queue.dequeue ());
+
+          for (String str : nameTree.inorder ())
+            System.out.print (str + " ");
+          System.out.println ();
+
+          for (String str : nameTree.preorder ())
+            System.out.print (str + " ");
+          System.out.println ();
+
+          for (String str : nameTree.postorder ())
+            System.out.print (str + " ");
         }
       }
     #+end_src
 
     #+RESULTS:
-    : Banana
-    : Cheetah
-    : Jane
-    : Tarzan
+    : Banana Cheetah Jane Tarzan 
+    : Tarzan Banana Jane Cheetah 
+    : Cheetah Jane Banana Tarzan 
 
 ** License
    Copyright (C) 2020 Jarmo Hurri
