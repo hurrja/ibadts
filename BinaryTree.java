@@ -14,20 +14,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 package ibadts;
+import java.util.List;
+import java.util.ArrayList;
 
 public class BinaryTree<T extends Comparable<T>>
 {
   public BinaryTree ()
   {
     node = null;
-    leftTree = null;
-    rightTree = null;
+    left = null;
+    right = null;
   }
 
   public void add (T value)
   {
     size++;
     addTo (this, value);
+  }
+
+  public void add (T[] values)
+  {
+    for (T v : values)
+      add (v);
   }
   
   public int getSize ()
@@ -40,23 +48,61 @@ public class BinaryTree<T extends Comparable<T>>
     return size == 0;
   }
 
-  public Queue<T> preorder ()
+  public Iterable<T> inorder ()
   {
-    Queue<T> queue = new Queue<> ();
-    preorder (this, queue);
-    return queue;
+    List<T> list = new ArrayList<> (size);
+    inorder (this, list);
+    return list;
   }
 
-  protected void preorder (BinaryTree<T> tree, Queue<T> queue)
+  protected void inorder (BinaryTree<T> tree, List<T> list)
   {
-    if (tree.leftTree != null)
-      preorder (tree.leftTree, queue);
+    if (tree.left != null)
+      inorder (tree.left, list);
 
     if (node != null)
-      queue.enqueue (tree.node);
+      list.add (tree.node);
 
-    if (tree.rightTree != null)
-      preorder (tree.rightTree, queue);
+    if (tree.right != null)
+      inorder (tree.right, list);
+  }
+  
+  public Iterable<T> postorder ()
+  {
+    List<T> list = new ArrayList<> (size);
+    postorder (this, list);
+    return list;
+  }
+
+  protected void postorder (BinaryTree<T> tree, List<T> list)
+  {
+    if (tree.left != null)
+      postorder (tree.left, list);
+
+    if (tree.right != null)
+      postorder (tree.right, list);
+
+    if (node != null)
+      list.add (tree.node);
+  }
+  
+  public Iterable<T> preorder ()
+  {
+    List<T> list = new ArrayList<> (size);
+    preorder (this, list);
+    return list;
+  }
+
+  protected void preorder (BinaryTree<T> tree, List<T> list)
+  {
+    if (node != null)
+      list.add (tree.node);
+
+    if (tree.left != null)
+      preorder (tree.left, list);
+
+    if (tree.right != null)
+      preorder (tree.right, list);
   }
   
   protected BinaryTree<T> addTo (BinaryTree<T> tree, T value)
@@ -72,16 +118,16 @@ public class BinaryTree<T extends Comparable<T>>
       if (tree.node == null)
         tree.node = value;
       else if (value.compareTo (tree.node) < 0)
-        tree.leftTree = addTo (tree.leftTree, value);
+        tree.left = addTo (tree.left, value);
       else
-        tree.rightTree = addTo (tree.rightTree, value);
+        tree.right = addTo (tree.right, value);
 
       return tree;
     }
   }
 
   private T node;
-  private BinaryTree<T> leftTree;
-  private BinaryTree<T> rightTree;
+  private BinaryTree<T> left;
+  private BinaryTree<T> right;
   private int size = 0;
 }
