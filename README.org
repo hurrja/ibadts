@@ -1,9 +1,9 @@
 * Java implementation of IB CS abstract data types
-** IB collections, stacks and queues in Java
+** IB collections, stacks, queues and binary trees in Java
    This repository contains Java classes that implement abstract data
-   types used in IB Computer Science: collections, stacks and
-   queues. Static (fixed-size) versions of stacks and queues are also
-   included.
+   types used in IB Computer Science: collections, stacks, queues and
+   binary trees. Static (fixed-size) versions of stacks and queues are
+   also included.
 ** Installation
 *** If you are using Intellij IDEA
     In Intellij IDEA, this package needs to be installed only once,
@@ -49,8 +49,13 @@
 
 ** Usage in Java
 *** Available methods
-    In addition to constructors, the classes contain the methods
-    specified by the IB document on pseudocode in exams. 
+    In addition to constructors, the classes for collections, stacks
+    and queues contain the methods specified by the IB document on
+    pseudocode in exams.
+
+    Binary tree contains methods for adding items and pre-, in- and
+    postorder traversal. Binary tree works on reference types that are
+    =Comparable= to themselves (such as =int= and =String=). 
 
     To help in quick initialization, all classes also contain a helper
     method
@@ -65,7 +70,8 @@
     #+begin_src java :exports code
       public String toString ()
     #+end_src
-    is also provided. This method prints the array returned by the
+    is also provided in \ldquo{}linear\rdquo classes collection, stack
+    and queue. This method prints the array returned by the
     =toArray()= method of the underlying Java class.
 *** Example use of a collection
     #+begin_src java :exports both :classname CollectionExample :results output 
