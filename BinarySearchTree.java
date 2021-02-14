@@ -60,18 +60,7 @@ public class BinarySearchTree<T extends Comparable<T>>
       }
     }
 
-    tree.size++;
     return tree;
-  }
-
-  public int getSize ()
-  {
-    return size;
-  }
-
-  public boolean isEmpty ()
-  {
-    return size == 0;
   }
 
   public boolean find (T value)
@@ -95,7 +84,7 @@ public class BinarySearchTree<T extends Comparable<T>>
 
   public Iterable<T> inorder ()
   {
-    List<T> list = new ArrayList<> (size);
+    List<T> list = new ArrayList<> ();
     inorder (this, list);
     return list;
   }
@@ -114,7 +103,7 @@ public class BinarySearchTree<T extends Comparable<T>>
   
   public Iterable<T> postorder ()
   {
-    List<T> list = new ArrayList<> (size);
+    List<T> list = new ArrayList<> ();
     postorder (this, list);
     return list;
   }
@@ -133,7 +122,7 @@ public class BinarySearchTree<T extends Comparable<T>>
   
   public Iterable<T> preorder ()
   {
-    List<T> list = new ArrayList<> (size);
+    List<T> list = new ArrayList<> ();
     preorder (this, list);
     return list;
   }
@@ -153,5 +142,4 @@ public class BinarySearchTree<T extends Comparable<T>>
   private T node;
   private BinarySearchTree<T> left;
   private BinarySearchTree<T> right;
-  private int size = 0;
 }
