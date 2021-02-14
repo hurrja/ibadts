@@ -55,10 +55,10 @@ public class BinarySearchTree<T extends Comparable<T>>
     
     while (!found && tree != null && tree.node != null)
     {
-      int cmpResult = tree.node.compareTo (value);
+      int cmpResult = value.compareTo (tree.node);
       if (cmpResult == 0)
         found = true;
-      else if (cmpResult > 0)
+      else if (cmpResult < 0)
         tree = tree.left;
       else
         tree = tree.right;
