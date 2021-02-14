@@ -172,7 +172,6 @@
 *** Example use of a binary search tree
     #+begin_src java :exports both :classname TreeExample :results output
       import ibadts.BinarySearchTree;
-      import ibadts.Queue;
 
       class TreeExample
       {
