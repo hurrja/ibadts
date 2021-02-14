@@ -17,9 +17,9 @@ package ibadts;
 import java.util.List;
 import java.util.ArrayList;
 
-public class BinaryTree<T extends Comparable<T>>
+public class BinarySearchTree<T extends Comparable<T>>
 {
-  public BinaryTree ()
+  public BinarySearchTree ()
   {
     node = null;
     left = null;
@@ -55,7 +55,7 @@ public class BinaryTree<T extends Comparable<T>>
     return list;
   }
 
-  protected void inorder (BinaryTree<T> tree, List<T> list)
+  protected void inorder (BinarySearchTree<T> tree, List<T> list)
   {
     if (tree.left != null)
       inorder (tree.left, list);
@@ -74,7 +74,7 @@ public class BinaryTree<T extends Comparable<T>>
     return list;
   }
 
-  protected void postorder (BinaryTree<T> tree, List<T> list)
+  protected void postorder (BinarySearchTree<T> tree, List<T> list)
   {
     if (tree.left != null)
       postorder (tree.left, list);
@@ -93,7 +93,7 @@ public class BinaryTree<T extends Comparable<T>>
     return list;
   }
 
-  protected void preorder (BinaryTree<T> tree, List<T> list)
+  protected void preorder (BinarySearchTree<T> tree, List<T> list)
   {
     if (node != null)
       list.add (tree.node);
@@ -105,11 +105,11 @@ public class BinaryTree<T extends Comparable<T>>
       preorder (tree.right, list);
   }
   
-  protected BinaryTree<T> addTo (BinaryTree<T> tree, T value)
+  protected BinarySearchTree<T> addTo (BinarySearchTree<T> tree, T value)
   {
     if (tree == null)
     {
-      BinaryTree<T> newTree = new BinaryTree<> ();
+      BinarySearchTree<T> newTree = new BinarySearchTree<> ();
       newTree.node = value;
       return newTree;
     }
@@ -127,7 +127,7 @@ public class BinaryTree<T extends Comparable<T>>
   }
 
   private T node;
-  private BinaryTree<T> left;
-  private BinaryTree<T> right;
+  private BinarySearchTree<T> left;
+  private BinarySearchTree<T> right;
   private int size = 0;
 }

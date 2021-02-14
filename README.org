@@ -2,8 +2,8 @@
 ** IB collections, stacks, queues and binary trees in Java
    This repository contains Java classes that implement abstract data
    types used in IB Computer Science: collections, stacks, queues and
-   binary trees. Static (fixed-size) versions of stacks and queues are
-   also included.
+   binary search trees. Static (fixed-size) versions of stacks and
+   queues are also included.
 ** Installation
 *** If you are using Intellij IDEA
     In Intellij IDEA, this package needs to be installed only once,
@@ -46,6 +46,13 @@
    =addItem()=. That is, items are traversed in the order they have
    been added. This implementation guarantees this ordering during
    traversal.
+
+** Traversing =BinarySearchTree=
+   This library supports traversing binary search trees in pre-, in-
+   and postorder. The corresponding class methods =preorder()=,
+   =inorder()= and =postorder()= return a reference to an =Iterable=,
+   which can then be traversed in a =for-each=-loop. See below for an
+   example of how to use these methods.
 
 ** Usage in Java
 *** Available methods
@@ -156,16 +163,16 @@
        : Next! -> food for customer 3
        : Next! -> food for customer 4
        : Next! -> food for customer 5
-*** Example use of a binary tree
+*** Example use of a binary search tree
     #+begin_src java :exports both :classname TreeExample :results output
-      import ibadts.BinaryTree;
+      import ibadts.BinarySearchTree;
       import ibadts.Queue;
 
       class TreeExample
       {
         public static void main (String[] args)
         {
-          BinaryTree<String> nameTree = new BinaryTree<> ();
+          BinarySearchTree<String> nameTree = new BinarySearchTree<> ();
           nameTree.add ("Tarzan");
           nameTree.add ("Banana");
           nameTree.add ("Jane");
