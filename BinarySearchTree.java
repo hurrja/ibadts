@@ -28,7 +28,6 @@ public class BinarySearchTree<T extends Comparable<T>>
 
   public void add (T value)
   {
-    size++;
     addTo (this, value);
   }
 
@@ -38,6 +37,27 @@ public class BinarySearchTree<T extends Comparable<T>>
       add (v);
   }
   
+  protected BinarySearchTree<T> addTo (BinarySearchTree<T> tree, T value)
+  {
+    if (tree == null)
+    {
+      tree = new BinarySearchTree<> ();
+      tree.node = value;
+    }
+    else
+    {
+      if (tree.node == null)
+        tree.node = value;
+      else if (value.compareTo (tree.node) < 0)
+        tree.left = addTo (tree.left, value);
+      else
+        tree.right = addTo (tree.right, value);
+    }
+
+    tree.size++;
+    return tree;
+  }
+
   public int getSize ()
   {
     return size;
@@ -124,27 +144,6 @@ public class BinarySearchTree<T extends Comparable<T>>
       preorder (tree.right, list);
   }
   
-  protected BinarySearchTree<T> addTo (BinarySearchTree<T> tree, T value)
-  {
-    if (tree == null)
-    {
-      BinarySearchTree<T> newTree = new BinarySearchTree<> ();
-      newTree.node = value;
-      return newTree;
-    }
-    else
-    {
-      if (tree.node == null)
-        tree.node = value;
-      else if (value.compareTo (tree.node) < 0)
-        tree.left = addTo (tree.left, value);
-      else
-        tree.right = addTo (tree.right, value);
-
-      return tree;
-    }
-  }
-
   private T node;
   private BinarySearchTree<T> left;
   private BinarySearchTree<T> right;
