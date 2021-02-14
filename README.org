@@ -119,17 +119,21 @@
         {
           Stack<String> bits = new Stack<> ();
           int decimal = 1216;
-    
+
           while (decimal > 0)
           {
+            // figure out last bit
             String digit;
             if (decimal % 2 == 0)
               digit = "zero";
             else
               digit = "one";
+            // push last bit
             bits.push (digit);
             decimal = decimal / 2;
           }
+
+          // print bits, in reverse order
           while (!bits.isEmpty ())
             System.out.print (bits.pop () + " ");
         }
@@ -148,9 +152,11 @@
         {
           StaticQueue<String> line = new StaticQueue<> (5);
 
+          // adding elements while there is still space
           for (int i = 1; !line.isFull (); i++)
             line.enqueue ("customer " + i);
 
+          // serving customers
           while (!line.isEmpty ())
             System.out.println ("Next! -> food for " + line.dequeue ());
         }
@@ -172,12 +178,18 @@
       {
         public static void main (String[] args)
         {
+          // create tree and add some elements
           BinarySearchTree<String> nameTree = new BinarySearchTree<> ();
           nameTree.add ("Tarzan");
           nameTree.add ("Banana");
           nameTree.add ("Jane");
           nameTree.add ("Cheetah");
 
+          // do a couple of searches
+          for (String s : new String[] {"Giraffe", "Jane"})
+            System.out.println ("looking for " + s + ": " + nameTree.find (s));
+
+          // different traversals
           for (String str : nameTree.inorder ())
             System.out.print (str + " ");
           System.out.println ();
@@ -193,6 +205,8 @@
     #+end_src
 
     #+RESULTS:
+    : looking for Giraffe: false
+    : looking for Jane: true
     : Banana Cheetah Jane Tarzan 
     : Tarzan Banana Jane Cheetah 
     : Cheetah Jane Banana Tarzan 
