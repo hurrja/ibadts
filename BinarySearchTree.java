@@ -48,13 +48,6 @@ public class BinarySearchTree<T extends Comparable<T>>
     return size == 0;
   }
 
-  public Iterable<T> inorder ()
-  {
-    List<T> list = new ArrayList<> (size);
-    inorder (this, list);
-    return list;
-  }
-
   public boolean find (T value)
   {
     BinarySearchTree<T> tree = this;
@@ -72,6 +65,13 @@ public class BinarySearchTree<T extends Comparable<T>>
     }
 
     return found;
+  }
+
+  public Iterable<T> inorder ()
+  {
+    List<T> list = new ArrayList<> (size);
+    inorder (this, list);
+    return list;
   }
 
   protected void inorder (BinarySearchTree<T> tree, List<T> list)
