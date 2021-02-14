@@ -62,7 +62,7 @@ public class BinarySearchTree<T extends Comparable<T>>
 
   protected boolean find (BinarySearchTree<T> tree, T value)
   {
-    if (tree == null)
+    if (tree == null || tree.node == null)
       return false;
     else
     {
