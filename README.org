@@ -47,22 +47,19 @@
    been added. This implementation guarantees this ordering during
    traversal.
 
-** Traversing =BinarySearchTree=
-   This library supports traversing binary search trees in pre-, in-
-   and postorder. The corresponding class methods =preorder()=,
-   =inorder()= and =postorder()= return a reference to an =Iterable=,
-   which can then be traversed in a =for-each=-loop. See below for an
-   example of how to use these methods.
-
 ** Usage in Java
 *** Available methods
     In addition to constructors, the classes for collections, stacks
     and queues contain the methods specified by the IB document on
     pseudocode in exams.
 
-    Binary tree contains methods for adding items and pre-, in- and
-    postorder traversal. Binary tree works on reference types that are
-    =Comparable= to themselves (such as =int= and =String=). 
+    Binary tree works on reference types that are =Comparable= to
+    themselves (such as =int= and =String=). Binary tree contains
+    methods for adding items, and pre-, in- and postorder
+    traversal. The corresponding class methods =preorder()=,
+    =inorder()= and =postorder()= return a reference to an =Iterable=,
+    which can then be traversed in a =for-each=-loop. See below for an
+    example of how to use these methods.
 
     To help in quick initialization, all classes also contain a helper
     method
