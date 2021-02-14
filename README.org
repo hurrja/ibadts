@@ -175,27 +175,27 @@
         public static void main (String[] args)
         {
           // create tree and add some elements
-          BinarySearchTree<String> nameTree = new BinarySearchTree<> ();
-          nameTree.add ("Tarzan");
-          nameTree.add ("Banana");
-          nameTree.add ("Jane");
-          nameTree.add ("Cheetah");
-          nameTree.add ("Jane"); // will be discarded since already in tree
+          BinarySearchTree<String> tree = new BinarySearchTree<> ();
+          tree.add ("Tarzan");
+          tree.add ("Banana");
+          tree.add ("Jane");
+          tree.add ("Cheetah");
+          tree.add ("Jane"); // will be discarded since already in tree
 
           // do a couple of searches
           for (String s : new String[] {"Giraffe", "Jane"})
-            System.out.println ("looking for " + s + ": " + nameTree.find (s));
+            System.out.println ("looking for " + s + ": " + tree.find (s));
 
           // different traversals
-          for (String str : nameTree.inorder ())
+          for (String str : tree.inorder ())
             System.out.print (str + " ");
           System.out.println ();
 
-          for (String str : nameTree.preorder ())
+          for (String str : tree.preorder ())
             System.out.print (str + " ");
           System.out.println ();
 
-          for (String str : nameTree.postorder ())
+          for (String str : tree.postorder ())
             System.out.print (str + " ");
         }
       }
