@@ -48,11 +48,32 @@ public class BinarySearchTree<T extends Comparable<T>>
     return size == 0;
   }
 
+  public boolean find (T value)
+  {
+    return find (this, value);
+  }
+  
   public Iterable<T> inorder ()
   {
     List<T> list = new ArrayList<> (size);
     inorder (this, list);
     return list;
+  }
+
+  protected boolean find (BinarySearchTree<T> tree, T value)
+  {
+    if (tree == null)
+      return false;
+    else
+    {
+      int cmpResult = tree.node.compareTo (value);
+      if (cmpResult == 0)
+        return true;
+      else if (cmpResult > 0)
+        return find (tree.left, value);
+      else
+        return find (tree.right, value);
+    }
   }
 
   protected void inorder (BinarySearchTree<T> tree, List<T> list)
