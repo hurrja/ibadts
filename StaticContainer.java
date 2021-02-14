@@ -31,7 +31,7 @@ public abstract class StaticContainer<T> extends Container<T>
   protected void preIncreaseCheckCapacity ()
   {
     if (isFull ())
-      throw new StaticCapacityExceededError ("stack capacity exceeded");
+      throw new StaticCapacityExceededError ("maximum capacity exceeded");
   }
   
   protected int capacity;
