@@ -180,6 +180,7 @@
           nameTree.add ("Banana");
           nameTree.add ("Jane");
           nameTree.add ("Cheetah");
+          nameTree.add ("Jane"); // will be discarded since already in tree
 
           // do a couple of searches
           for (String s : new String[] {"Giraffe", "Jane"})

@@ -48,10 +48,16 @@ public class BinarySearchTree<T extends Comparable<T>>
     {
       if (tree.node == null)
         tree.node = value;
-      else if (value.compareTo (tree.node) < 0)
-        tree.left = addTo (tree.left, value);
       else
-        tree.right = addTo (tree.right, value);
+      {
+        int cmpResult = value.compareTo (tree.node);
+        if (cmpResult == 0)
+          return tree; // special case: value already in tree, no change to tree
+        else if (cmpResult < 0)
+          tree.left = addTo (tree.left, value);
+        else
+          tree.right = addTo (tree.right, value);
+      }
     }
 
     tree.size++;
