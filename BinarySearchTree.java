@@ -24,8 +24,14 @@ public class BinarySearchTree<T extends Comparable<T>>
     node = null;
     left = null;
     right = null;
+    depth = 0;
   }
 
+  public int getDepth ()
+  {
+    return depth;
+  }
+  
   public void add (T value)
   {
     addTo (this, value);
@@ -37,11 +43,12 @@ public class BinarySearchTree<T extends Comparable<T>>
       add (v);
   }
   
-  protected BinarySearchTree<T> addTo (BinarySearchTree<T> tree, T value)
+  protected static <V extends Comparable<V>> BinarySearchTree<V> addTo (BinarySearchTree<V> tree,
+                                                                        V value)
   {
     if (tree == null)
     {
-      tree = new BinarySearchTree<> ();
+      tree = new BinarySearchTree<V> ();
       tree.node = value;
     }
     else
@@ -52,7 +59,7 @@ public class BinarySearchTree<T extends Comparable<T>>
       {
         int cmpResult = value.compareTo (tree.node);
         if (cmpResult == 0)
-          return tree; // special case: value already in tree, no change to tree
+          return tree; // special case: value already in tree, no change to tree or depth
         else if (cmpResult < 0)
           tree.left = addTo (tree.left, value);
         else
@@ -60,6 +67,10 @@ public class BinarySearchTree<T extends Comparable<T>>
       }
     }
 
+    // update depth
+    tree.depth = 1 + Math.max (tree.left == null ? 0 : tree.left.getDepth (),
+                               tree.right == null ? 0 : tree.right.getDepth ());
+    
     return tree;
   }
 
@@ -89,12 +100,12 @@ public class BinarySearchTree<T extends Comparable<T>>
     return list;
   }
 
-  protected void inorder (BinarySearchTree<T> tree, List<T> list)
+  protected static <V extends Comparable<V>> void inorder (BinarySearchTree<V> tree, List<V> list)
   {
     if (tree.left != null)
       inorder (tree.left, list);
 
-    if (node != null)
+    if (tree.node != null)
       list.add (tree.node);
 
     if (tree.right != null)
@@ -108,7 +119,7 @@ public class BinarySearchTree<T extends Comparable<T>>
     return list;
   }
 
-  protected void postorder (BinarySearchTree<T> tree, List<T> list)
+  protected static <V extends Comparable<V>> void postorder (BinarySearchTree<V> tree, List<V> list)
   {
     if (tree.left != null)
       postorder (tree.left, list);
@@ -116,7 +127,7 @@ public class BinarySearchTree<T extends Comparable<T>>
     if (tree.right != null)
       postorder (tree.right, list);
 
-    if (node != null)
+    if (tree.node != null)
       list.add (tree.node);
   }
   
@@ -127,9 +138,9 @@ public class BinarySearchTree<T extends Comparable<T>>
     return list;
   }
 
-  protected void preorder (BinarySearchTree<T> tree, List<T> list)
+  protected static <V extends Comparable<V>> void preorder (BinarySearchTree<V> tree, List<V> list)
   {
-    if (node != null)
+    if (tree.node != null)
       list.add (tree.node);
 
     if (tree.left != null)
@@ -142,4 +153,5 @@ public class BinarySearchTree<T extends Comparable<T>>
   private T node;
   private BinarySearchTree<T> left;
   private BinarySearchTree<T> right;
+  private int depth;
 }

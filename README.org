@@ -186,6 +186,9 @@
           for (String s : new String[] {"Giraffe", "Jane"})
             System.out.println ("looking for " + s + ": " + tree.find (s));
 
+          // print depth of tree
+          System.out.println ("depth of tree: " + tree.getDepth ());
+
           // different traversals
           for (String str : tree.inorder ())
             System.out.print (str + " ");
@@ -204,6 +207,7 @@
     #+RESULTS:
     : looking for Giraffe: false
     : looking for Jane: true
+    : depth of tree: 4
     : Banana Cheetah Jane Tarzan 
     : Tarzan Banana Jane Cheetah 
     : Cheetah Jane Banana Tarzan 
