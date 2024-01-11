@@ -13,7 +13,7 @@
     1. Create a new project from version control.
     2. As project source, give
        #+begin_example
-       https://github.com/jarmohurri/ibadts.git
+       https://github.com/hurrja/ibadts.git
        #+end_example
     3. Install git if asked to do that.
     4. After git has cloned the project, verify that IDEA will use an
