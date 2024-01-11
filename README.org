@@ -38,7 +38,7 @@
 *** If you are using git as your own version control system
     Just add this library as a submodule of your project:
     #+begin_src sh
-      git submodule add https://github.com/jarmohurri/ibadts.git
+      git submodule add https://github.com/hurrja/ibadts.git
     #+end_src
 
 ** Order of traversal of =Collection=
